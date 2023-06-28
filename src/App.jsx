@@ -4,7 +4,7 @@ import { Footer } from "./Footer";
 
 function App() {
   return (
-    <div>
+    <div className="home">
       <Header />
       <Home />
       <Footer />

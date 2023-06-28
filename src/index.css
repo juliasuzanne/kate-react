@@ -4,6 +4,12 @@ html {
 
 img {
  height: 200px;
+
+}
+
+#drawing{
+  padding: 10px;
+
 }
 
 .heading {
@@ -12,4 +18,30 @@ img {
 
 .handwriting {
   font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif
+}
+
+#drawings-index {
+  padding: 100px;
+  z-index: 3;
+  display: flex;
+  flex-wrap: wrap;
+  width: 100vw;
+}
+
+.home {
+  background-color: peachpuff;
+  height: 210vh;
+  width: 200vw;
+  margin: 0;
+  padding: 30px 0px 0px 30px;
+}
+
+.body {
+  padding: 0px;
+  margin: 0px;
+}
+
+body {
+  padding: 0px;
+  margin: 0px;
 }
