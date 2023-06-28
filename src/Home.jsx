@@ -1,6 +1,6 @@
 import axios from "axios";
 import { useState, useEffect } from "react";
-import { DrawingsIndex } from "./DrawingsIndex";
+import { Submit } from "./Submit";
 
 export function Home() {
   // const drawings = [
@@ -31,8 +31,8 @@ export function Home() {
 
   return (
     <div>
-      <h1>Drawings</h1>
-      <DrawingsIndex drawings={drawings} />
+      <h1 className="heading">Drawings</h1>
+      <Submit drawings={drawings} />
     </div>
   );
 }
