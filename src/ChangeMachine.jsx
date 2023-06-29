@@ -5,6 +5,7 @@ import { DrawingsCreate } from "./DrawingsCreate";
 import { Modal } from "./Modal";
 import { DrawingsShow } from "./DrawingsShow";
 import { SearchFilter } from "./SearchFilter";
+import { FooterContact } from "./FooterContact";
 
 export function ChangeMachine() {
   // const drawings = [
@@ -96,6 +97,7 @@ export function ChangeMachine() {
           onDestroyDrawing={handleDestroyDrawing}
         />
       </Modal>
+      <FooterContact />
     </div>
   );
 }

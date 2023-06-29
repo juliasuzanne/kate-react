@@ -1,8 +1,11 @@
 import { Header } from "./Header";
 import { Home } from "./Home";
-import { Footer } from "./Footer";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { ChangeMachine } from "./ChangeMachine";
+import "./App.css";
+import "/public/fonts/Calinastiya.ttf";
+import { Landing } from "./Landing";
+import { Contact } from "./Contact";
 
 function App() {
   return (
@@ -10,10 +13,11 @@ function App() {
       <BrowserRouter>
         <Header />
         <Routes>
-          <Route path="/" element={<Home />} />
+          <Route path="/" element={<Landing />} />
+          <Route path="/contact" element={<Contact />} />
+          <Route path="/home" element={<Home />} />
           <Route path="/changemachine" element={<ChangeMachine />} />
         </Routes>
-        <Footer />
       </BrowserRouter>
     </div>
   );

@@ -14,14 +14,34 @@ img {
 #button {
   border-style: hidden;
   outline: none;
-  background-color: rgba(95, 52, 15, 0.532);
-  color: white;
+  background-color:transparent;
+  font-size: 30px;
+  color: black;
   padding: 5px;
   border-radius: 5px;
 }
 
 .myform {
   text-align:center;
+}
+
+.background {
+  width: 100vw;
+  height: 100vh;
+  z-index: 0;
+}
+
+#enterButton {
+  font-family: 'Main', 'Gill Sans';
+  border-style: hidden;
+  position: absolute;
+  bottom: 45vh; /*your button position*/
+  right: 45vw; /*your button position*/
+  padding: 20px;
+  font-size: 40px;
+  background-color:rgba(8, 29, 8, 0.68);
+  color: white;
+  border-radius: 15px;
 }
 
 #myform {
@@ -34,6 +54,18 @@ img {
   border-radius: 5px;
 }
 
+#myform-main {
+  font-family:'Main', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  border-style: hidden;
+  outline: none;
+  font-size: 100px;
+  background-color:rgba(255, 220, 131, 0.21);
+  color: rgb(8, 29, 8);
+  padding: 50px;
+  margin: 40px;
+  border-radius: 0px;
+}
+
 #drawing{
   padding: 10px;
 
@@ -44,30 +76,30 @@ img {
 }
 
 .heading {
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: 'Main', Helvetica, sans-serif;
   text-align: center;
 }
 
 .handwriting {
-  font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-family:'Light', 'Arial Narrow', Arial, sans-serif;
   text-align: center;
 }
 
 #drawings-index {
-  padding: 100px;
   z-index: 3;
-  display: flex;
+  display: inline-flex;
+  justify-content: center;
   flex-wrap: wrap;
   width: 100vw;
   text-align: center;
+  padding-bottom: 200px;
 }
 
 .home {
-  background-color: peachpuff;
+  background-color: white;
   height: 100vh;
   width: 100vw;
   margin: 0;
-  padding: 30px 0px 0px 30px;
 }
 
 .body {
@@ -78,4 +110,22 @@ img {
 body {
   padding: 0px;
   margin: 0px;
+}
+
+#footer {
+
+  height:110px;
+  width: 100%; 
+  background-color: white;
+  background-image: none;
+  background-repeat: repeat;
+  background-attachment: scroll;
+  background-position: 0% 0%;
+  position: fixed;
+  bottom: 0pt;
+  left: 0pt;
+}
+
+#foot {
+  font-size: 30px;
 }

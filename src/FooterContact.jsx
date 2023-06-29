@@ -1,9 +1,9 @@
-export function Footer() {
+export function FooterContact() {
   return (
     <div>
       <footer className="handwriting" id="footer">
-        <a href="/contact" id="foot">
-          Contact
+        <a href="/home" id="foot">
+          Home
         </a>
         <p>Copyright 2023 Kate FitzGerrell</p>
         <p> Developed by Julia Grimes </p>

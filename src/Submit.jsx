@@ -18,10 +18,9 @@ export function Submit(props) {
     <div>
       <div className="containerHeader">
         <form className="center" onSubmit={handleChangeList}>
-          <h2 className="heading">Search Filter: </h2>
-          <input id="myform" type="string" value={savedValue} onChange={(e) => setSavedValue(e.target.value)} />
+          <input id="myform-main" type="string" value={savedValue} onChange={(e) => setSavedValue(e.target.value)} />
           <button className="handwriting" id="button" type="button">
-            Submit
+            show
           </button>
         </form>
       </div>

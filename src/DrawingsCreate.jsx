@@ -21,7 +21,7 @@ export function DrawingsCreate(props) {
         <div>
           url: <input id="myform" name="url" type="string" />
         </div>
-        <button id="button" type="submit">
+        <button id="" type="submit">
           Upload drawing
         </button>
       </form>

@@ -4,6 +4,7 @@ import { Submit } from "./Submit";
 import { DrawingsCreate } from "./DrawingsCreate";
 import { Modal } from "./Modal";
 import { DrawingsShowPublic } from "./DrawingsShowPublic";
+import { Footer } from "./Footer";
 
 export function Home() {
   const [drawings, setDrawings] = useState([]);
@@ -33,11 +34,11 @@ export function Home() {
 
   return (
     <div>
-      <h1 className="heading">Drawings</h1>
       <Submit drawings={drawings} onShowDrawing={handleShowModal} />
       <Modal show={isModalVisible} onClose={handleClose}>
         <DrawingsShowPublic drawing={currentDrawing} />
       </Modal>
+      <Footer />
     </div>
   );
 }

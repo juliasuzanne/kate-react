@@ -6,8 +6,6 @@ export function SearchFilter(props) {
   return (
     <div>
       <div className="center">
-        <h2 className="containerHeader"> Your Items: </h2>
-        Search Filter:
         <input
           defaultValue="none"
           id="myform"
