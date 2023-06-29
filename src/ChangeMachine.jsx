@@ -82,7 +82,12 @@ export function ChangeMachine() {
   return (
     <div>
       <DrawingsCreate onCreateDrawing={handleCreateDrawing} />
+      <br></br>
+      <br></br>
+      <br></br>
+
       <h1 className="heading">Drawings</h1>
+
       <SearchFilter drawings={drawings} onShowDrawing={handleShowModal} />
       <Modal show={isModalVisible} onClose={handleClose}>
         <DrawingsShow

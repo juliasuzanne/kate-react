@@ -5,17 +5,18 @@ export function SearchFilter(props) {
 
   return (
     <div>
-      <div className="containerHeader">
-        <h2> Your Items: </h2>
+      <div className="center">
+        <h2 className="containerHeader"> Your Items: </h2>
         Search Filter:
         <input
           defaultValue="none"
-          className="myform"
+          id="myform"
           type="text"
           value={searchFilter}
           onChange={(event) => setSearchFilter(event.target.value)}
         />{" "}
       </div>
+      <br></br>
 
       <div id="drawings-index">
         {props.drawings

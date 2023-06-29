@@ -8,20 +8,22 @@ export function DrawingsCreate(props) {
   return (
     <div>
       <h1 className="heading"> Upload drawing </h1>
-      <form onSubmit={handleSubmit}>
+      <form className="myform" onSubmit={handleSubmit}>
         <div>
-          Title: <input name="name" type="string" />
+          Title: <input id="myform" name="name" type="string" />
         </div>
         <div>
-          Tags: <input name="tags" type="string" />
+          Tags: <input id="myform" name="tags" type="string" />
         </div>
         <div>
-          Description: <input name="description" type="string" />
+          Description: <input id="myform" name="description" type="string" />
         </div>
         <div>
-          url: <input name="url" type="string" />
+          url: <input id="myform" name="url" type="string" />
         </div>
-        <button type="submit">Upload drawing</button>
+        <button id="button" type="submit">
+          Upload drawing
+        </button>
       </form>
     </div>
   );
