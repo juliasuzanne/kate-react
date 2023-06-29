@@ -7,7 +7,7 @@ export function Submit(props) {
   const handleChangeList = (event) => {
     event.preventDefault();
     console.log("test" + { savedValue });
-    if (savedValue === "" || savedValue === " ") {
+    if (savedValue === "" || savedValue === " " || savedValue.length < 4) {
       setSavedValue("");
     } else {
       setSearchFilter(savedValue.toLowerCase());
@@ -36,7 +36,13 @@ export function Submit(props) {
           .map((drawing) => (
             <div key={drawing.id} id="drawing">
               <h5 className="handwriting"> {drawing.name} </h5>
-              <img height="300px" className="showingdrawing" src={drawing.url} alt="" />
+              <img
+                onClick={() => props.onShowDrawing(drawing)}
+                height="300px"
+                className="showingdrawing"
+                src={drawing.url}
+                alt=""
+              />
               <p className="handwriting"> {drawing.description} </p>
               {/* <button onClick={() => props.onReturndrawing(drawing)}> Return drawing, no refunds!</button> */}
             </div>

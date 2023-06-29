@@ -12,6 +12,10 @@ img {
 
 }
 
+.delete{
+  padding: 20px;
+}
+
 .heading {
   font-family: Arial, Helvetica, sans-serif;
 }
