@@ -3,9 +3,10 @@ import { useState, useEffect } from "react";
 import { Submit } from "./Submit";
 import { DrawingsCreate } from "./DrawingsCreate";
 import { Modal } from "./Modal";
-import { DrawingsShowPublic } from "./DrawingsShowPublic";
+import { DrawingsShow } from "./DrawingsShow";
+import { SearchFilter } from "./SearchFilter";
 
-export function Home() {
+export function ChangeMachine() {
   // const drawings = [
   //   {
   //     id: 1,
@@ -80,10 +81,15 @@ export function Home() {
 
   return (
     <div>
+      <DrawingsCreate onCreateDrawing={handleCreateDrawing} />
       <h1 className="heading">Drawings</h1>
-      <Submit drawings={drawings} onShowDrawing={handleShowModal} />
+      <SearchFilter drawings={drawings} onShowDrawing={handleShowModal} />
       <Modal show={isModalVisible} onClose={handleClose}>
-        <DrawingsShowPublic drawing={currentDrawing} />
+        <DrawingsShow
+          drawing={currentDrawing}
+          onUpdateDrawing={handleUpdateDrawing}
+          onDestroyDrawing={handleDestroyDrawing}
+        />
       </Modal>
     </div>
   );

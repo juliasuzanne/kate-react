@@ -12,7 +12,7 @@ export function DrawingsShow(props) {
   return (
     <div>
       <p className="handwriting">{props.drawing.name}</p>
-      <img src={props.drawing.url} />
+      <img className="modal-drawing" src={props.drawing.url} />
       <p className="handwriting">{props.drawing.description}</p>
 
       <form onSubmit={handleSubmit}>

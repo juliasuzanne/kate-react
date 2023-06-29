@@ -19,11 +19,21 @@ export function SearchFilter(props) {
 
       <div id="drawings-index">
         {props.drawings
-          .filter((drawings) => drawings.tags.toLowerCase().includes(searchFilter.toLowerCase()))
+          .filter(
+            (drawings) =>
+              drawings.tags.toLowerCase().includes(searchFilter.toLowerCase()) ||
+              drawings.name.toLowerCase().includes(searchFilter.toLowerCase())
+          )
           .map((drawing) => (
             <div key={drawing.id} id="drawing">
               <h5> {drawing.name} </h5>
-              <img height="300px" className="showingdrawing" src={drawing.url} alt="" />
+              <img
+                onClick={() => props.onShowDrawing(drawing)}
+                height="300px"
+                className="showingdrawing"
+                src={drawing.url}
+                alt=""
+              />
               <p className="descript"> {drawing.description} </p>
               {/* <button onClick={() => props.onReturndrawing(drawing)}> Return drawing, no refunds!</button> */}
             </div>
