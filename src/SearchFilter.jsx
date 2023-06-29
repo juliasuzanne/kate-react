@@ -27,7 +27,7 @@ export function SearchFilter(props) {
           )
           .map((drawing) => (
             <div key={drawing.id} id="drawing">
-              <h5> {drawing.name} </h5>
+              <h5 className="handwriting"> {drawing.name} </h5>
               <img
                 onClick={() => props.onShowDrawing(drawing)}
                 height="300px"
@@ -35,7 +35,7 @@ export function SearchFilter(props) {
                 src={drawing.url}
                 alt=""
               />
-              <p className="descript"> {drawing.description} </p>
+              <p className="handwriting"> {drawing.description} </p>
               {/* <button onClick={() => props.onReturndrawing(drawing)}> Return drawing, no refunds!</button> */}
             </div>
           ))}

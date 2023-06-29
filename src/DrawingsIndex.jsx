@@ -4,9 +4,9 @@ export function DrawingsIndex(props) {
       <h1>All drawings</h1>
       {props.drawings.map((drawing) => (
         <div key={drawing.id}>
-          <h2>{drawing.name}</h2>
+          <h2 className="handwriting">{drawing.name}</h2>
           <img height="300px" src={drawing.url} />
-          <p>{drawing.description}</p>
+          <p className="handwriting">{drawing.description}</p>
         </div>
       ))}
     </div>
