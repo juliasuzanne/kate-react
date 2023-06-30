@@ -3,10 +3,10 @@ export function FooterContact() {
     <div>
       <footer className="handwriting" id="footer">
         <a href="/home" id="foot">
-          Home
+          HOME
         </a>
-        <p>Copyright 2023 Kate FitzGerrell</p>
-        <p> Developed by Julia Grimes </p>
+        <p>COPYRIGHT 2023 KATE FITZGERRELL</p>
+        <p> developed by julia grimes </p>
       </footer>
     </div>
   );

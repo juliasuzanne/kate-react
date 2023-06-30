@@ -18,10 +18,13 @@
   left: 50%;
   transform: translate(-50%,-50%);
   padding: 1em;
+  justify-content: center;
 }
 
 .modal-drawing {
-  height: 400px;
+  min-height: 80vh;
+  max-width: 90vw;
+  justify-content: center;
 }
 
 .modal-main button.close {

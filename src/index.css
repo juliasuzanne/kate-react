@@ -3,8 +3,7 @@ html {
 }
 
 img {
- height: 200px;
-
+ height: 300px;
 }
 
 .center {
@@ -36,8 +35,8 @@ img {
   border-style: hidden;
   position: absolute;
   bottom: 45vh; /*your button position*/
-  right: 45vw; /*your button position*/
-  padding: 20px;
+  right: 40vw; /*your button position*/
+  padding: 0px;
   font-size: 40px;
   background-color:rgba(8, 29, 8, 0.68);
   color: white;
@@ -57,13 +56,16 @@ img {
 #myform-main {
   font-family:'Main', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
   border-style: hidden;
+  width: 75vw;
   outline: none;
   font-size: 100px;
-  background-color:rgba(255, 220, 131, 0.21);
+  background-image: url("/public/line.png");
+  background-size: contain;
   color: rgb(8, 29, 8);
-  padding: 50px;
+  padding: 30px;
   margin: 40px;
   border-radius: 0px;
+  background-repeat: no-repeat;
 }
 
 #drawing{
@@ -83,6 +85,10 @@ img {
 .handwriting {
   font-family:'Light', 'Arial Narrow', Arial, sans-serif;
   text-align: center;
+}
+
+#handwriting {
+  max-width: 300px;
 }
 
 #drawings-index {
@@ -123,9 +129,11 @@ body {
   background-position: 0% 0%;
   position: fixed;
   bottom: 0pt;
+  font-size: 12px;
   left: 0pt;
 }
 
 #foot {
-  font-size: 30px;
+  font-size: 20px;
 }
+

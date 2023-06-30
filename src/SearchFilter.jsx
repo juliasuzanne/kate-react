@@ -33,7 +33,11 @@ export function SearchFilter(props) {
                 src={drawing.url}
                 alt=""
               />
-              <p className="handwriting"> {drawing.description} </p>
+              <p id="handwriting" className="handwriting">
+                {" "}
+                {drawing.description}{" "}
+              </p>
+              <button onClick={() => props.onShowDrawing(drawing)}> edit </button>
               {/* <button onClick={() => props.onReturndrawing(drawing)}> Return drawing, no refunds!</button> */}
             </div>
           ))}

@@ -19,9 +19,9 @@ export function Submit(props) {
       <div className="containerHeader">
         <form className="center" onSubmit={handleChangeList}>
           <input id="myform-main" type="string" value={savedValue} onChange={(e) => setSavedValue(e.target.value)} />
-          <button className="handwriting" id="button" type="button">
+          {/* <button className="handwriting" id="button" type="button">
             show
-          </button>
+          </button> */}
         </form>
       </div>
 
@@ -30,7 +30,6 @@ export function Submit(props) {
           .filter((drawings) => drawings.tags.toLowerCase().includes(searchFilter))
           .map((drawing) => (
             <div key={drawing.id} id="drawing">
-              <h5 className="handwriting"> {drawing.name} </h5>
               <img
                 onClick={() => props.onShowDrawing(drawing)}
                 height="300px"
@@ -38,7 +37,7 @@ export function Submit(props) {
                 src={drawing.url}
                 alt=""
               />
-              <p className="handwriting"> {drawing.description} </p>
+
               {/* <button onClick={() => props.onReturndrawing(drawing)}> Return drawing, no refunds!</button> */}
             </div>
           ))}

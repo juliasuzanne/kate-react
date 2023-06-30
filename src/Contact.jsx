@@ -3,7 +3,9 @@ import { FooterContact } from "./FooterContact";
 export function Contact() {
   return (
     <div>
-      <h1 className="heading">Contact</h1>
+      <h1 className="heading">CONTACT</h1>
+      <p className="handwriting"> kate.xox.etak@gmail.com </p>
+      <p className="handwriting"> do not email </p>
       <FooterContact />
     </div>
   );
