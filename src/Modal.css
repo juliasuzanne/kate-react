@@ -22,11 +22,10 @@
 }
 
 .modal-drawing {
-  min-height: 80vh;
-  max-width: 90vw;
-  justify-content: center;
-}
-
+  max-height: 80vh;
+  max-width: 80vw;
+ }
+ 
 .modal-main button.close {
   font-size: 2em;
   background: none;

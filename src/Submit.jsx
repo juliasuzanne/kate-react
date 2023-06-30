@@ -18,10 +18,14 @@ export function Submit(props) {
     <div>
       <div className="containerHeader">
         <form className="center" onSubmit={handleChangeList}>
-          <input id="myform-main" type="string" value={savedValue} onChange={(e) => setSavedValue(e.target.value)} />
-          {/* <button className="handwriting" id="button" type="button">
-            show
-          </button> */}
+          <input
+            autoFocus
+            className="rq-form-element"
+            id="myform-main"
+            type="string"
+            value={savedValue}
+            onChange={(e) => setSavedValue(e.target.value)}
+          />
         </form>
       </div>
 

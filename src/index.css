@@ -2,8 +2,10 @@ html {
   scroll-behavior: smooth;
 }
 
-img {
- height: 300px;
+.showingdrawing {
+ max-height: 300px;
+ height: 100%;
+ width: 100%;
 }
 
 .center {
