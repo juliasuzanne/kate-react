@@ -34,3 +34,21 @@
   top: 0em;
   right: 0.2em;
 }
+
+.modal-question-close{
+  font-size: 1em;
+  background: none;
+  border: none;
+  position: absolute;
+  bottom: 0em;
+  top: 70%;
+  left: 50%;
+  transform: translate(-50%,0%);
+  font-family: 'Light';
+}
+
+#handwriting {
+  padding: 20px;
+  font-size: 40px;
+  font-family: 'Light';
+}

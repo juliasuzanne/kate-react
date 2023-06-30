@@ -1,8 +1,21 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { ModalQuestion } from "./ModalQuestion";
 
 export function Submit(props) {
   const [searchFilter, setSearchFilter] = useState("  ");
   const [savedValue, setSavedValue] = useState("");
+
+  const [isQuestionModalVisible, setIsQuestionModalVisible] = useState(false);
+
+  const handleQuestion = () => {
+    console.log("handleShowQuestion");
+    setIsQuestionModalVisible(true);
+  };
+
+  const handleCloseQuestion = () => {
+    console.log("handleClose");
+    setIsQuestionModalVisible(false);
+  };
 
   const handleChangeList = (event) => {
     event.preventDefault();
@@ -28,6 +41,14 @@ export function Submit(props) {
           />
         </form>
       </div>
+
+      <div>
+        <button className="pregunta" onClick={() => handleQuestion()}>
+          ?
+        </button>
+      </div>
+
+      <ModalQuestion show={isQuestionModalVisible} onClose={handleCloseQuestion}></ModalQuestion>
 
       <div id="drawings-index">
         {props.drawings
