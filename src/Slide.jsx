@@ -4,17 +4,14 @@ import "./Slide.css";
 
 export function Slide() {
   const ImageURL = [
-    "https://images.unsplash.com/photo-1522204538344-922f76ecc041?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=50e38600a12d623a878983fc5524423f&auto=format&fit=crop&w=751&q=80",
-    "https://images.unsplash.com/photo-1434493907317-a46b5bbe7834?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=6ef3d9fab9593225bc80ddad5c0f7308&auto=format&fit=crop&w=750&q=80",
-    "https://images.unsplash.com/photo-1491933382434-500287f9b54b?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=f5a57d73d6a357b35b35220d9b150b02&auto=format&fit=crop&w=400&q=80",
-    "https://images.unsplash.com/1/apple-gear-looking-pretty.jpg?ixlib=rb-0.3.5&s=f2c32e45682d8b19a77fa594d2b5980d&auto=format&fit=crop&w=750&q=80",
-    "https://images.unsplash.com/photo-1421757295538-9c80958e75b0?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjF9&s=0951c1944637dbfce6904add6c55ce8a&auto=format&fit=crop&w=753&q=80",
-    "https://images.unsplash.com/photo-1511367734837-f2956f0d8020?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=07df2ec833c0d0cc1086c49f28042239&auto=format&fit=crop&w=694&q=80",
-    "https://images.unsplash.com/photo-1518118115078-c6adc68910bd?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=fb1cd92c0f9683fe93a6fd99a8277b0f&auto=format&fit=crop&w=750&q=80",
-    "https://images.unsplash.com/photo-1516865690679-db5c36d24903?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=8e26149ded25a0beda73c5942768257c&auto=format&fit=crop&w=750&q=80",
-    "https://images.unsplash.com/photo-1512486130939-2c4f79935e4f?ixlib=rb-0.3.5&s=52e6edc6f5427ca1cc3a895ae4e01ea5&auto=format&fit=crop&w=500&q=60",
-    "https://images.unsplash.com/photo-1498409785966-ab341407de6e?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=8a87674644cd4f622df5c57facbccf1e&auto=format&fit=crop&w=500&q=60",
+    "https://res.cloudinary.com/dygjz8yhp/image/upload/v1688163406/14_copy_21_fipelf.jpg",
+    "https://res.cloudinary.com/dygjz8yhp/image/upload/v1688163457/FITZGERRELL_1_s5simw.jpg",
+    "https://res.cloudinary.com/dygjz8yhp/image/upload/v1688163393/10_L_abbq28.jpg",
+    "https://res.cloudinary.com/dygjz8yhp/image/upload/v1688163416/SP_12_kfybif.jpg",
+    "  https://res.cloudinary.com/dygjz8yhp/image/upload/v1688163392/17_L_bxkamz.jpg",
   ];
+
+  let count = ImageURL.length - 1;
 
   class ImageGallery extends React.Component {
     constructor(props) {
@@ -32,7 +29,7 @@ export function Slide() {
       //this.myImage = React.createRef();
     }
     slideTransition = (slider) => {
-      if (this.state.currentIndex == 9) {
+      if (this.state.currentIndex == count) {
         this.left = 0;
         slider.style.left = this.left + "px";
       } else {
@@ -46,12 +43,12 @@ export function Slide() {
       setInterval(() => {
         if (this.state.slideshow === true) {
           var slider = document.getElementById("slider-img-container");
-          var index = this.state.currentIndex === 9 ? 0 : this.state.currentIndex + 1;
+          var index = this.state.currentIndex === count ? 0 : this.state.currentIndex + 1;
 
           this.slideTransition(slider);
 
           this.setState((prevState) => ({
-            currentIndex: prevState.currentIndex === 9 ? 0 : prevState.currentIndex + 1,
+            currentIndex: prevState.currentIndex === count ? 0 : prevState.currentIndex + 1,
           }));
         }
       }, 2000);
@@ -123,23 +120,23 @@ export function Slide() {
 
     prevHandler = (event) => {
       var slider = document.getElementById("slider-img-container");
-      var index = this.state.currentIndex === 0 ? 9 : this.state.currentIndex - 1;
+      var index = this.state.currentIndex === 0 ? count : this.state.currentIndex - 1;
 
       this.slideTransition(slider);
 
       this.setState((prevState) => ({
-        currentIndex: prevState.currentIndex === 0 ? 9 : prevState.currentIndex - 1,
+        currentIndex: prevState.currentIndex === 0 ? count : prevState.currentIndex - 1,
       }));
     };
 
     nextHandler = (event) => {
       var slider = document.getElementById("slider-img-container");
-      var index = this.state.currentIndex === 9 ? 0 : this.state.currentIndex + 1;
+      var index = this.state.currentIndex === count ? 0 : this.state.currentIndex + 1;
 
       this.slideTransition(slider);
 
       this.setState((prevState) => ({
-        currentIndex: prevState.currentIndex === 9 ? 0 : prevState.currentIndex + 1,
+        currentIndex: prevState.currentIndex === count ? 0 : prevState.currentIndex + 1,
       }));
     };
 
@@ -164,7 +161,6 @@ export function Slide() {
           <button className="prev-carousel-button" onClick={this.prevHandler}>
             &#9664;
           </button>
-          <div id="carousel-dot-container">{carouselDots}</div>
           <div className="next-carousel-button" onClick={this.nextHandler}>
             &#9654;
           </div>
@@ -202,11 +198,9 @@ export function Slide() {
 
       return (
         <div id="root">
-          <div id="gallery-container" ref={this.myImage}>
+          <div ref={this.myImage}>
             {ImgItem}
-            <div id="slider-img-container" ref={this.mySlider}>
-              {sliderImages}
-            </div>
+            <div id="slider-img-container" ref={this.mySlider}></div>
           </div>
         </div>
       );
