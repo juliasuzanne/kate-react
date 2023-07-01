@@ -130,6 +130,19 @@ transform: translate(-50%, -50%);
   text-align: center;
 }
 
+
+.heading-noresults {
+  font-family: 'Headers', Helvetica, sans-serif;
+  text-align: left;
+  left: 45%;
+  top: 50%;
+  width: 60%;
+  position: fixed;
+  transform: translate(-50%, -50%);
+  font-size: 8vh;
+  color: rgb(205, 76, 76);
+}
+
 .heading-login {
   font-family: 'Headers', Helvetica, sans-serif;
   text-align: center;
