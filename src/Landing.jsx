@@ -8,17 +8,11 @@ export function Landing() {
     ref.current?.scrollIntoView({ behavior: "smooth" });
   };
 
-  useEffect(() => {
-    handleOpenPage();
-  });
+  useEffect(handleOpenPage);
 
   return (
-    <div>
-      <img
-        className="background"
-        src="https://res.cloudinary.com/dygjz8yhp/image/upload/v1688165009/HOME_o5kzxy.jpg
-          "
-      />
+    <div className="background">
+      <div />
 
       <a href="/home" className="heading-enter">
         enter

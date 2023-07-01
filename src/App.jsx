@@ -7,7 +7,6 @@ import "/public/fonts/Calinastiya.ttf";
 import { Landing } from "./Landing";
 import { Contact } from "./Contact";
 import { Login } from "./Login";
-import { useRef } from "react";
 
 function App() {
   return (
@@ -15,8 +14,9 @@ function App() {
       <BrowserRouter>
         <Header />
         <Routes>
-          <Route element={<Landing />}>
-            <Route path="/" element={<div id="scrollto"></div>} />
+          <Route path="/" element={<Landing />} />
+          <Route>
+            <Route element={<Navigate to="/" replace />} />
           </Route>
           <Route path="/contact" element={<Contact />} />
           <Route path="/home" element={<Home />} />
