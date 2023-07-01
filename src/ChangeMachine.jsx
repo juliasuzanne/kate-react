@@ -1,6 +1,7 @@
 import axios from "axios";
 import { useState, useEffect } from "react";
 import { Submit } from "./Submit";
+import { Login } from "./Login";
 import { DrawingsCreate } from "./DrawingsCreate";
 import { Modal } from "./Modal";
 import { DrawingsShow } from "./DrawingsShow";
@@ -82,22 +83,29 @@ export function ChangeMachine() {
 
   return (
     <div>
-      <DrawingsCreate onCreateDrawing={handleCreateDrawing} />
-      <br></br>
-      <br></br>
-      <br></br>
+      {localStorage.jwt === undefined ? (
+        <Login />
+      ) : (
+        <>
+          <DrawingsCreate onCreateDrawing={handleCreateDrawing} />
+          <br></br>
+          <br></br>
+          <br></br>
 
-      <h1 className="heading">Drawings</h1>
+          <h1 className="heading">Drawings</h1>
 
-      <SearchFilter drawings={drawings} onShowDrawing={handleShowModal} />
-      <Modal show={isModalVisible} onClose={handleClose}>
-        <DrawingsShow
-          drawing={currentDrawing}
-          onUpdateDrawing={handleUpdateDrawing}
-          onDestroyDrawing={handleDestroyDrawing}
-        />
-      </Modal>
-      <FooterContact />
+          <SearchFilter drawings={drawings} onShowDrawing={handleShowModal} />
+          <Modal show={isModalVisible} onClose={handleClose}>
+            <DrawingsShow
+              drawing={currentDrawing}
+              onUpdateDrawing={handleUpdateDrawing}
+              onDestroyDrawing={handleDestroyDrawing}
+            />
+          </Modal>
+          <FooterContact />
+        </>
+      )}
+      ;
     </div>
   );
 }

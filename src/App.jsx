@@ -6,6 +6,8 @@ import "./App.css";
 import "/public/fonts/Calinastiya.ttf";
 import { Landing } from "./Landing";
 import { Contact } from "./Contact";
+import { Login } from "./Login";
+import { LogoutLink } from "./Logout";
 
 function App() {
   return (
@@ -17,6 +19,8 @@ function App() {
           <Route path="/contact" element={<Contact />} />
           <Route path="/home" element={<Home />} />
           <Route path="/changemachine" element={<ChangeMachine />} />
+          <Route path="/logout" element={<LogoutLink />} />
+          <Route path="/login" element={<Login />} />
         </Routes>
       </BrowserRouter>
     </div>
