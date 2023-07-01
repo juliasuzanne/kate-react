@@ -5,9 +5,9 @@ import "./Slide.css";
 
 export function Slide() {
   const images = [
-    "https://res.cloudinary.com/dygjz8yhp/image/upload/v1688163393/10_L_abbq28.jpg",
-    "https://res.cloudinary.com/dygjz8yhp/image/upload/v1688163397/Scanned_Image_1_qvkgb5.jpg",
-    "https://res.cloudinary.com/dygjz8yhp/image/upload/v1688163392/17_L_bxkamz.jpg",
+    "https://res.cloudinary.com/dytb4ayqj/image/upload/v1688196724/Screen_Shot_2023-07-01_at_3.31.28_AM_dvfvji.png",
+    "https://res.cloudinary.com/dytb4ayqj/image/upload/v1688196724/Screen_Shot_2023-07-01_at_3.31.23_AM_yodklv.png",
+    "https://res.cloudinary.com/dytb4ayqj/image/upload/v1688196804/Screen_Shot_2023-07-01_at_3.33.11_AM_lbpne5.png",
   ];
 
   const rotateAnimationHandler = (props, state) => {
@@ -83,7 +83,6 @@ export function Slide() {
         {images.map((URL, index) => (
           <div id="slide-small">
             <img alt="sample_file" src={URL} key={index} />
-            <p>description</p>
           </div>
         ))}
       </Carousel>

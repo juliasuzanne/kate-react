@@ -37,9 +37,9 @@ export function Home() {
   return (
     <div>
       <Submit drawings={drawings} onShowDrawing={handleShowModal} />
-      <ModalSlide show={isModalVisible} onClose={handleClose}>
-        {/* <DrawingsShowPublic drawing={currentDrawing} /> */}
-      </ModalSlide>
+      <Modal show={isModalVisible} onClose={handleClose}>
+        <DrawingsShowPublic drawing={currentDrawing} />
+      </Modal>
       <Footer />
     </div>
   );

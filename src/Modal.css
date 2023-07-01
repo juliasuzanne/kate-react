@@ -79,8 +79,7 @@
 }
 
 .modal-question-close:hover{
-  transform: scale(1.1);
-
+  color:antiquewhite;
 }
 
 .modal-slide-close{

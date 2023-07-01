@@ -43,12 +43,12 @@
 
 #slide-small{
   top: 0em;
-  max-height: 40vh;
-  max-width: 40vw;
+  max-height: 60vh;
+  max-width: 60vw;
   display: inline-flex;
   justify-content: center;
   position: relative;
-  top: 0em;
+  top: 10em;
   left: 0em;
   flex-wrap: wrap;
   text-align: center;
