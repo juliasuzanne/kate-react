@@ -5,6 +5,8 @@ import { DrawingsCreate } from "./DrawingsCreate";
 import { Modal } from "./Modal";
 import { DrawingsShowPublic } from "./DrawingsShowPublic";
 import { Footer } from "./Footer";
+import { Slide } from "./Slide";
+import { ModalSlide } from "./ModalSlide";
 
 export function Home() {
   const [drawings, setDrawings] = useState([]);
@@ -35,9 +37,9 @@ export function Home() {
   return (
     <div>
       <Submit drawings={drawings} onShowDrawing={handleShowModal} />
-      <Modal show={isModalVisible} onClose={handleClose}>
-        <DrawingsShowPublic drawing={currentDrawing} />
-      </Modal>
+      <ModalSlide show={isModalVisible} onClose={handleClose}>
+        {/* <DrawingsShowPublic drawing={currentDrawing} /> */}
+      </ModalSlide>
       <Footer />
     </div>
   );
