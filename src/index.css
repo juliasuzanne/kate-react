@@ -12,6 +12,21 @@ html {
   text-align: center;
 }
 
+#login {
+  padding-top: 20vh;
+}
+
+#button-login {
+  border-style: hidden;
+  outline: none;
+  background-color:rgba(0, 0, 0, 0.394);
+  font-size: 20px;
+  color: black;
+  margin-top:3vh;
+  padding: 10px;
+  border-radius: 100%;
+}
+
 #button {
   border-style: hidden;
   outline: none;
@@ -105,6 +120,12 @@ html {
 .heading {
   font-family: 'Headers', Helvetica, sans-serif;
   text-align: center;
+}
+
+.heading-login {
+  font-family: 'Headers', Helvetica, sans-serif;
+  text-align: center;
+  font-size: 10vh;
 }
 
 .handwriting {

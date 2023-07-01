@@ -7,6 +7,7 @@ import { Modal } from "./Modal";
 import { DrawingsShow } from "./DrawingsShow";
 import { SearchFilter } from "./SearchFilter";
 import { FooterContact } from "./FooterContact";
+import { LogoutLink } from "./Logout";
 
 export function ChangeMachine() {
   // const drawings = [
@@ -90,6 +91,10 @@ export function ChangeMachine() {
           <DrawingsCreate onCreateDrawing={handleCreateDrawing} />
           <br></br>
           <br></br>
+          <div id="logout" className="handwriting">
+            <LogoutLink />
+          </div>
+          <br></br>
           <br></br>
 
           <h1 className="heading">Drawings</h1>
@@ -105,7 +110,6 @@ export function ChangeMachine() {
           <FooterContact />
         </>
       )}
-      ;
     </div>
   );
 }
