@@ -68,19 +68,27 @@ html {
   z-index: 0;
 }
 
-#enterButton {
-  font-family: 'Headers', 'Gill Sans';
-  border-style: hidden;
-  position: absolute;
-  bottom: 20vh; /*your button position*/
-  right: 20vw; /*your button position*/
-  padding: 0px;
-  font-size: 40px;
-  height: 50%;
-  width: 70%;
-  background-color:transparent;
-  color: white;
-  border-radius: 15px;
+#scrollto {
+background-color: transparent;
+width: 40vw;
+height: 40vh;
+top: 60vh;
+position: absolute;
+left: 50vw;
+z-index: 10;
+transform: translate(-50%, -50%);
+}
+
+.heading-enter {
+  font-family: "Headers", sans-serif;
+  position: fixed;
+  z-index: 5;
+  text-decoration: none;
+  color: rgba(13, 45, 13, 0.815);
+  top: 60vh;
+  right: 50vw;
+  font-size: 10vh;
+  transform: translate(50%,-50%);
 }
 
 #myform {
@@ -156,6 +164,10 @@ html {
   margin: 0;
 }
 
+.landing{
+  background-color:rgb(185, 152, 110);
+}
+
 .body {
   padding: 0px;
   margin: 0px;
@@ -186,5 +198,6 @@ body {
   color: blue;
   font-family: "Headers";
   font-size: 3vh;
+  text-decoration: none;
 }
 

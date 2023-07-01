@@ -1,13 +1,13 @@
 import { Header } from "./Header";
 import { Home } from "./Home";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { Navigate, BrowserRouter, Routes, Route } from "react-router-dom";
 import { ChangeMachine } from "./ChangeMachine";
 import "./App.css";
 import "/public/fonts/Calinastiya.ttf";
 import { Landing } from "./Landing";
 import { Contact } from "./Contact";
 import { Login } from "./Login";
-import { LogoutLink } from "./Logout";
+import { useRef } from "react";
 
 function App() {
   return (
@@ -15,11 +15,12 @@ function App() {
       <BrowserRouter>
         <Header />
         <Routes>
-          <Route path="/" element={<Landing />} />
+          <Route element={<Landing />}>
+            <Route path="/" element={<div id="scrollto"></div>} />
+          </Route>
           <Route path="/contact" element={<Contact />} />
           <Route path="/home" element={<Home />} />
           <Route path="/changemachine" element={<ChangeMachine />} />
-          <Route path="/logout" element={<LogoutLink />} />
           <Route path="/login" element={<Login />} />
         </Routes>
       </BrowserRouter>
