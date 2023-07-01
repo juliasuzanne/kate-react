@@ -1,12 +1,9 @@
 import axios from "axios";
 import { useState, useEffect } from "react";
 import { Submit } from "./Submit";
-import { DrawingsCreate } from "./DrawingsCreate";
 import { Modal } from "./Modal";
 import { DrawingsShowPublic } from "./DrawingsShowPublic";
 import { Footer } from "./Footer";
-import { Slide } from "./Slide";
-import { ModalSlide } from "./ModalSlide";
 
 export function Home() {
   const [drawings, setDrawings] = useState([]);

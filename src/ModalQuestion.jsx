@@ -8,7 +8,7 @@ export function ModalQuestion(props) {
           <button className="modal-question-close" type="button" onClick={props.onClose}>
             OK
           </button>
-          <p id="handwriting">Try "blue"</p>
+          <p id="handwriting">Try `blue`</p>
         </div>
       </div>
     );

@@ -32,7 +32,6 @@ export function ChangeMachine() {
   const [isModalVisible, setIsModalVisible] = useState(false);
   const [currentDrawing, setCurrentDrawing] = useState({});
   const [images, setImages] = useState([]);
-
   const [currentImage, setCurrentImage] = useState([]);
 
   const handleShowModal = (drawing) => {

@@ -6,8 +6,6 @@ import { useState, useEffect } from "react";
 
 export function Slide(props) {
   const [images, setImages] = useState([]);
-  const [imageId, setImagesId] = useState([]);
-
   const handleGetImages = () => {
     setImages(props.images.map((image) => image.url));
   };
@@ -45,7 +43,7 @@ export function Slide(props) {
         swipeable={false}
       >
         {images.map((URL, index) => (
-          <div id="slide-small">
+          <div key="test" id="slide-small">
             <img alt="sample_file" src={URL} key={index} />
           </div>
         ))}
