@@ -21,7 +21,7 @@ export function SearchFilter(props) {
           .filter(
             (drawings) =>
               drawings.tags.toLowerCase().includes(searchFilter.toLowerCase()) ||
-              drawings.name.toLowerCase().includes(searchFilter.toLowerCase())
+              drawings.description.toLowerCase().includes(searchFilter.toLowerCase())
           )
           .map((drawing) => (
             <div key={drawing.id} id="drawing">
