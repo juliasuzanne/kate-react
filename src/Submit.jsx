@@ -33,7 +33,6 @@ export function Submit(props) {
         <form className="center" onSubmit={handleChangeList}>
           <input
             autoFocus
-            className="rq-form-element"
             id="myform-main"
             type="string"
             value={savedValue}

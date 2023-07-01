@@ -41,14 +41,34 @@
   border: none;
   position: absolute;
   bottom: 0em;
-  top: 70%;
+  top: 60%;
   left: 50%;
   transform: translate(-50%,0%);
-  font-family: 'Light';
+  font-family: 'Headers';
+  color: white;
+}
+
+.modal-drawing-private{
+  max-height: 60vh;
+  max-width: 60vw;
 }
 
 #handwriting {
   padding: 20px;
-  font-size: 40px;
-  font-family: 'Light';
+  font-family: 'Handwriting';
+}
+
+.modal-main-q {
+  position: fixed;
+  /* background-image: url("/public/ink.png");
+  background-size:contain;
+  background-repeat: no-repeat; */
+  width: auto;
+  color: white;
+  height: auto;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  padding: 1em;
+  justify-content: center;
 }

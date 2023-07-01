@@ -5,7 +5,7 @@ export function DrawingsIndex(props) {
       {props.drawings.map((drawing) => (
         <div key={drawing.id}>
           <h2 className="handwriting">{drawing.name}</h2>
-          <img height="300px" src={drawing.url} />
+          <img src={drawing.url} />
           <p id="handwriting" className="handwriting">
             {drawing.description}
           </p>

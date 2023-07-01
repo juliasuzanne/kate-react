@@ -1,11 +1,11 @@
 @font-face {
-  font-family: "Light";   /*Can be any text*/
-  src: local("Kate-Regular"),
-    url("/public/fonts/Kate-Regular.ttf") format("truetype");
+  font-family: "Handwriting";   /*Can be any text*/
+  src: local("Handwriting-Regular"),
+    url("/public/fonts/Handwriting-Regular.ttf") format("truetype");
 }
 
 @font-face {
-  font-family: "Main";   /*Can be any text*/
-  src: local("Kate-Regular"),
-    url("/public/fonts/Kate-Regular.ttf") format("truetype");
+  font-family: "Headers";   /*Can be any text*/
+  src: local("Headers-Regular"),
+    url("/public/fonts/Headers-Regular.ttf") format("truetype");
 }
