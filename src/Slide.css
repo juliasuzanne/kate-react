@@ -42,15 +42,18 @@
 }
 
 #slide-small{
-  top: 0em;
-  max-height: 60vh;
-  max-width: 60vw;
+  max-height: 50vh;
+  max-width: 50vw;
   display: inline-flex;
   justify-content: center;
   position: relative;
-  top: 10em;
+  top: 0em;
   left: 0em;
   flex-wrap: wrap;
   text-align: center;
 }
 
+.carousel-root{
+  background-color:transparent;
+  height: 30vh;
+}

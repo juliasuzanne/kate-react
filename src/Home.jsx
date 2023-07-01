@@ -26,7 +26,7 @@ export function Home() {
 
   const handleIndexDrawings = () => {
     console.log("handleIndexDrawings");
-    axios.get("http://localhost:3000/drawings.json").then((response) => {
+    axios.get("https://kate.fly.dev//drawings.json").then((response) => {
       console.log(response.data);
       setDrawings(response.data);
     });

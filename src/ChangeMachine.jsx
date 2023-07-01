@@ -41,11 +41,11 @@ export function ChangeMachine() {
     setCurrentDrawing(drawing);
   };
 
-  const handleShowModalImages = (drawing) => {
-    console.log("handleShowModalImages", drawing);
-    setIsModalImageVisible(true);
-    setCurrentDrawing(drawing);
+  const handleShowModalImages = () => {
+    handleClose();
     handleIndexImages();
+    console.log("handleShowModalImages");
+    setIsModalImageVisible(true);
   };
 
   const handleCloseImages = () => {
@@ -60,7 +60,7 @@ export function ChangeMachine() {
 
   const handleCreateDrawing = (params, successCallback) => {
     console.log("handleCreateDrawing", params);
-    axios.post("http://localhost:3000/drawings.json", params).then((response) => {
+    axios.post("https://kate.fly.dev//drawings.json", params).then((response) => {
       setDrawings([...drawings, response.data]);
       successCallback();
     });
@@ -68,7 +68,7 @@ export function ChangeMachine() {
 
   const handleCreateImage = (params, successCallback) => {
     console.log("handleCreateImage", params);
-    axios.post(`http://localhost:3000/images/${currentDrawing.id}.json`, params).then((response) => {
+    axios.post(`https://kate.fly.dev//images/${currentDrawing.id}.json`, params).then((response) => {
       setDrawings([...drawings, response.data]);
       successCallback();
     });
@@ -76,7 +76,7 @@ export function ChangeMachine() {
 
   const handleIndexDrawings = () => {
     console.log("handleIndexDrawings");
-    axios.get("http://localhost:3000/drawings.json").then((response) => {
+    axios.get("https://kate.fly.dev//drawings.json").then((response) => {
       console.log(response.data);
       setDrawings(response.data);
     });
@@ -84,7 +84,7 @@ export function ChangeMachine() {
 
   const handleUpdateDrawing = (id, params, successCallback) => {
     console.log("handleUpdateDrawing", params);
-    axios.patch(`http://localhost:3000/drawings/${id}.json`, params).then((response) => {
+    axios.patch(`https://kate.fly.dev//drawings/${id}.json`, params).then((response) => {
       setDrawings(
         drawings.map((drawing) => {
           if (drawing.id === response.data.id) {
@@ -101,7 +101,7 @@ export function ChangeMachine() {
 
   const handleDestroyDrawing = (drawing) => {
     console.log("handleDestroyDrawing", drawing);
-    axios.delete(`http://localhost:3000/drawings/${drawing.id}.json`).then((response) => {
+    axios.delete(`https://kate.fly.dev//drawings/${drawing.id}.json`).then((response) => {
       setDrawings(drawings.filter((d) => d.id !== drawing.id));
       handleClose();
     });
@@ -109,14 +109,14 @@ export function ChangeMachine() {
 
   const handleDestroyImage = (image) => {
     console.log("handleDestroyImage", image);
-    axios.delete(`http://localhost:3000/images/${image.id}.json`).then((response) => {
+    axios.delete(`https://kate.fly.dev//images/${image.id}.json`).then((response) => {
       setImages(images.filter((d) => d.id !== image.id));
       handleClose();
     });
   };
   const handleIndexImages = () => {
     console.log("handleIndexImages");
-    axios.get(`http://localhost:3000/images/${currentDrawing.id}.json`).then((response) => {
+    axios.get(`https://kate.fly.dev//images/${currentDrawing.id}.json`).then((response) => {
       console.log(response.data);
       setImages(response.data);
     });
@@ -141,8 +141,8 @@ export function ChangeMachine() {
 
           <h1 className="heading">Drawings</h1>
 
-          <SearchFilter drawings={drawings} onShowDrawing={handleShowModal} onShowImagesIndex={handleShowModalImages} />
-          <Modal show={isModalVisible} onClose={handleClose}>
+          <SearchFilter drawings={drawings} onShowDrawing={handleShowModal} />
+          <Modal show={isModalVisible} onClose={handleClose} onShowImagesIndex={handleShowModalImages}>
             <DrawingsShow
               drawing={currentDrawing}
               onUpdateDrawing={handleUpdateDrawing}

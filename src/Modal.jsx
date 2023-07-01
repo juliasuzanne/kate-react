@@ -9,6 +9,7 @@ export function Modal(props) {
           <button className="close" type="button" onClick={props.onClose}>
             &#x2715;
           </button>
+          <button onClick={() => props.onShowImagesIndex(drawing)}> add-ons </button>
         </section>
       </div>
     );

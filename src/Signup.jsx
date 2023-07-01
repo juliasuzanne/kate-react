@@ -5,7 +5,7 @@ export function Signup() {
   const handleSubmit = (event) => {
     event.preventDefault();
     const params = new FormData(event.target);
-    axios.post("http://localhost:3000/users", params).then((response) => {
+    axios.post("https://kate.fly.dev//users", params).then((response) => {
       console.log(response.data);
       event.target.reset();
       window.location.href = "/"; // Change this to hide a modal, redirect to a specific page, etc.
