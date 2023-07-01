@@ -1,31 +1,56 @@
 .right-button {
   width: 50px;
   height: 50px;
-  background-color: pink;
+  background-color: transparent;
   border-style: none;
-  right: 10vw;
-  top: 40%;
-  position: fixed;
-  font-size: 40px;
-}
-.left-button {
-  width: 50px;
-  height: 50px;
-  background-color: pink;
-  border-style: none;
-  left: 10vw;
+  right: 5vw;
   top: 40%;
   position: fixed;
   font-size: 40px;
 }
 
-.thumb{
-  max-height: 40vh;
-  max-width: 40vw;
+.right-button:hover {
+  transform: scale(1.2);
 }
+
+.left-button:hover {
+  transform: scale(1.2);
+}
+
+.left-button {
+  width: 50px;
+  height: 50px;
+  background-color: transparent;
+  border-style: none;
+  left: 5vw;
+  top: 40%;
+  position: fixed;
+  font-size: 40px;
+  z-index: 20;
+}
+
+.thumb{
+  /* max-height: 40vh;
+  max-width: 40vw;
+  top: -3vh;
+  left: 6vw;
+  position: relative; */
+  height: 0px;
+  width: 0px;
+  position: fixed;
+
+}
+
 #slide-small{
   top: 0em;
-  max-height: 50vh;
-  max-width: 50vw;
+  max-height: 40vh;
+  max-width: 40vw;
+  display: inline-flex;
+  justify-content: center;
+  position: relative;
+  top: 0em;
+  left: 0em;
+  flex-wrap: wrap;
+  text-align: center;
 }
 

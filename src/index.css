@@ -3,10 +3,14 @@ html {
 }
 
 .showingdrawing {
- max-height: 400px;
+ max-height: 360px;
  height: auto;
  width: auto;
 }
+
+.showingdrawing:hover {
+  transform: scale(1.02);
+ }
 
 .center {
   text-align: center;

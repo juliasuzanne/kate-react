@@ -77,19 +77,13 @@ export function Slide() {
             <li onClick={clickHandler} className={`ind ${isSelected ? "active" : ""}`} key={index} role="button" />
           );
         }}
-        statusFormatter={(currentItem, total) => {
-          return (
-            <p>
-              image {currentItem} of {total}
-            </p>
-          );
-        }}
         transitionTime={310}
         swipeable={false}
       >
         {images.map((URL, index) => (
           <div id="slide-small">
             <img alt="sample_file" src={URL} key={index} />
+            <p>description</p>
           </div>
         ))}
       </Carousel>
