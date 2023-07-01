@@ -8,6 +8,9 @@ import { DrawingsShow } from "./DrawingsShow";
 import { SearchFilter } from "./SearchFilter";
 import { FooterContact } from "./FooterContact";
 import { LogoutLink } from "./Logout";
+import { ImagesCreate } from "./ImagesCreate";
+import { ModalImage } from "./ModalImage";
+import { ImagesIndex } from "./ImagesIndex";
 
 export function ChangeMachine() {
   // const drawings = [
@@ -25,13 +28,29 @@ export function ChangeMachine() {
   //   },
   // ];
   const [drawings, setDrawings] = useState([]);
+  const [isModalImageVisible, setIsModalImageVisible] = useState(false);
   const [isModalVisible, setIsModalVisible] = useState(false);
   const [currentDrawing, setCurrentDrawing] = useState({});
+  const [images, setImages] = useState([]);
+
+  const [currentImage, setCurrentImage] = useState([]);
 
   const handleShowModal = (drawing) => {
     console.log("handleShowModal", drawing);
     setIsModalVisible(true);
     setCurrentDrawing(drawing);
+  };
+
+  const handleShowModalImages = (drawing) => {
+    console.log("handleShowModalImages", drawing);
+    setIsModalImageVisible(true);
+    setCurrentDrawing(drawing);
+    handleIndexImages();
+  };
+
+  const handleCloseImages = () => {
+    console.log("handleCloseImages");
+    setIsModalImageVisible(false);
   };
 
   const handleClose = () => {
@@ -40,8 +59,16 @@ export function ChangeMachine() {
   };
 
   const handleCreateDrawing = (params, successCallback) => {
-    console.log("handleCreatePhoto", params);
+    console.log("handleCreateDrawing", params);
     axios.post("http://localhost:3000/drawings.json", params).then((response) => {
+      setDrawings([...drawings, response.data]);
+      successCallback();
+    });
+  };
+
+  const handleCreateImage = (params, successCallback) => {
+    console.log("handleCreateImage", params);
+    axios.post(`http://localhost:3000/images/${currentDrawing.id}.json`, params).then((response) => {
       setDrawings([...drawings, response.data]);
       successCallback();
     });
@@ -80,6 +107,21 @@ export function ChangeMachine() {
     });
   };
 
+  const handleDestroyImage = (image) => {
+    console.log("handleDestroyImage", image);
+    axios.delete(`http://localhost:3000/images/${image.id}.json`).then((response) => {
+      setImages(images.filter((d) => d.id !== image.id));
+      handleClose();
+    });
+  };
+  const handleIndexImages = () => {
+    console.log("handleIndexImages");
+    axios.get(`http://localhost:3000/images/${currentDrawing.id}.json`).then((response) => {
+      console.log(response.data);
+      setImages(response.data);
+    });
+  };
+
   useEffect(handleIndexDrawings, []);
 
   return (
@@ -99,7 +141,7 @@ export function ChangeMachine() {
 
           <h1 className="heading">Drawings</h1>
 
-          <SearchFilter drawings={drawings} onShowDrawing={handleShowModal} />
+          <SearchFilter drawings={drawings} onShowDrawing={handleShowModal} onShowImagesIndex={handleShowModalImages} />
           <Modal show={isModalVisible} onClose={handleClose}>
             <DrawingsShow
               drawing={currentDrawing}
@@ -107,6 +149,9 @@ export function ChangeMachine() {
               onDestroyDrawing={handleDestroyDrawing}
             />
           </Modal>
+          <ModalImage show={isModalImageVisible} onGetImages={handleIndexImages} onClose={handleCloseImages}>
+            <ImagesIndex drawing={currentDrawing} drawings={drawings} images={images} />
+          </ModalImage>
           <FooterContact />
         </>
       )}

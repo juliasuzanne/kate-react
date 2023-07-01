@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 export function SearchFilter(props) {
   const [searchFilter, setSearchFilter] = useState("");
@@ -37,7 +37,8 @@ export function SearchFilter(props) {
                 {" "}
                 {drawing.description}{" "}
               </p>
-              <button onClick={() => props.onShowDrawing(drawing)}> edit </button>
+              <button onClick={() => props.onShowDrawing(drawing)}> edit</button>
+              <button onClick={() => props.onShowImagesIndex(drawing)}> add-ons </button>
               {/* <button onClick={() => props.onReturndrawing(drawing)}> Return drawing, no refunds!</button> */}
             </div>
           ))}
