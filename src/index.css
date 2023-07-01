@@ -85,7 +85,7 @@ html {
   outline: none;
   font-size: 20vh;
   background-image: url("https://res.cloudinary.com/dygjz8yhp/image/upload/v1688166733/line_new_wdf96n.png");
-  background-size: cover;
+  background-size: contain;
   color: rgb(8, 29, 8);
   padding: 30px;
   margin: 40px;

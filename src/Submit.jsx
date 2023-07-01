@@ -4,6 +4,8 @@ import { ModalQuestion } from "./ModalQuestion";
 export function Submit(props) {
   const [searchFilter, setSearchFilter] = useState("  ");
   const [savedValue, setSavedValue] = useState("");
+  let [count, setCount] = useState(0);
+  let [text, setText] = useState("");
 
   const [isQuestionModalVisible, setIsQuestionModalVisible] = useState(false);
 
@@ -49,6 +51,7 @@ export function Submit(props) {
 
       <ModalQuestion show={isQuestionModalVisible} onClose={handleCloseQuestion}></ModalQuestion>
 
+      <h2 className="heading">{text}</h2>
       <div id="drawings-index">
         {props.drawings
           .filter((drawings) => drawings.tags.toLowerCase().includes(searchFilter))
@@ -61,7 +64,6 @@ export function Submit(props) {
                 src={drawing.url}
                 alt=""
               />
-
               {/* <button onClick={() => props.onReturndrawing(drawing)}> Return drawing, no refunds!</button> */}
             </div>
           ))}
