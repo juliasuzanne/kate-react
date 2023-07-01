@@ -7,6 +7,7 @@ import "/public/fonts/Calinastiya.ttf";
 import { Landing } from "./Landing";
 import { Contact } from "./Contact";
 import { Login } from "./Login";
+import { Slide } from "./Slide";
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
           <Route>
             <Route element={<Navigate to="/" replace />} />
           </Route>
+          <Route path="/slide" element={<Slide />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/home" element={<Home />} />
           <Route path="/changemachine" element={<ChangeMachine />} />
